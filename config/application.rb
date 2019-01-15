@@ -29,5 +29,7 @@ module SunilPortfolio
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.sass.preferred_syntax = :sass
   end
 end
