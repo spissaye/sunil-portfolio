@@ -31,5 +31,6 @@ module SunilPortfolio
     config.generators.system_tests = nil
 
     config.sass.preferred_syntax = :sass
+    config.assets.paths << Rails.root.join("app", "assets", "fonts")
   end
 end
