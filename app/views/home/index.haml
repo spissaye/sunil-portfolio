@@ -1,0 +1,275 @@
+%section#home.banner-area
+  / / Start Header Area
+  #undefined-sticky-wrapper.sticky-wrapper.is-sticky{:style => "height: 48px;"}
+    %header.default-header{:style => "width: 1905px; position: fixed; top: 0px;"}
+      %nav.navbar.navbar-expand-lg.navbar-light
+        .container
+          %a.navbar-brand.text-white.scroll-nav{:href => "#home"}
+            SKP
+          %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
+            %span.text-white.lnr.lnr-menu
+          #navbarSupportedContent.collapse.navbar-collapse.justify-content-end.align-items-center
+            %ul.navbar-nav
+              %li
+                %a.scroll-nav{:href => "#home"} Home
+              %li
+                %a.scroll-nav{:href => "#about"} About
+              %li
+                %a.scroll-nav{:href => "#experiences"} Experience
+              %li
+                %a.scroll-nav{:href => "#offerings"} Offerings
+              %li
+                %a.scroll-nav{:href => "#contact"} Contact
+              / / Dropdown
+              %li.dropdown
+                %a#navbardrop.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+                  Pages
+                .dropdown-menu
+                  %a.dropdown-item{:href => "#"} Personal Blog
+                  %a.dropdown-item{:href => "#"} Tech Blog
+  / / End Header Area
+  .container
+    .row.justify-content-start.align-items-center
+      .col-lg-6.col-md-12.no-padding.banner-right.text-center
+        %img.img-fluid{:alt => "", :src => "/assets/sunil_kumar_pissaye-9a59a056f64556f607c4c654051b4ca11a6ea51b12b79aae4abbda092e943df2.png"}/
+      .col-lg-6.col-md-12.banner-left
+        %h1
+          Hi, I am
+          %br/
+          %span Sunil kumar Pissaye
+          %br/
+        %span.iam
+          Carnegie Mellon Grad | Full Stack Engineer | Entrepreneur
+        %p.mx-auto.mt-20.mb-40
+          Excited by new ideas and cool technologies. Entrepreneurial mindset.
+          %br/
+          Enjoy working in different roles & responsibilities.
+        %a.text-uppercase.header-btn.scroll-nav{:href => "#contact"} Let Us Talk
+/ / End banner Area
+%section#about.welcome_area.p_120.about-area.section-gap
+  .container
+    .row.welcome_inner
+      .col-lg-6
+        .welcome_text
+          %h4 About Myself
+          %p Excited by technology’s potential of creating a world that humanity has never seen before. I am at my best when I am vigorously iterating in high performing teams on ideas that will have a positive impact on the world in my lifetime.  I can see the importance of company’s big and small ideas with limited to large impact.
+          Most of my career has either been an early member of a start-up team or co-founder. I have been in the trenches, different phases of startup and acquisitions.
+          .row
+            .col-md-4
+              .wel_item
+                %i.lnr.lnr-database
+                %h4 2
+                %p Acquisitions
+            .col-md-4
+              .wel_item
+                %i.lnr.lnr-book
+                %h4 11
+                %p Total Projects
+            .col-md-4
+              .wel_item
+                %i.lnr.lnr-users
+                %h4 Over 3 million
+                %p Total Users
+      .col-lg-6
+        .tools_expert
+          .skill_main
+            .skill_item
+              %h4
+                After Effects
+                = succeed "%" do
+                  %span.counter 85
+              .progress_br
+                .progress
+                  .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "85", :role => "progressbar"}
+            .skill_item
+              %h4
+                Photoshop
+                = succeed "%" do
+                  %span.counter 90
+              .progress_br
+                .progress
+                  .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "90", :role => "progressbar"}
+            .skill_item
+              %h4
+                Illustrator
+                = succeed "%" do
+                  %span.counter 70
+              .progress_br
+                .progress
+                  .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "70", :role => "progressbar"}
+            .skill_item
+              %h4
+                Sublime
+                = succeed "%" do
+                  %span.counter 95
+              .progress_br
+                .progress
+                  .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "95", :role => "progressbar"}
+            .skill_item
+              %h4
+                Sketch
+                = succeed "%" do
+                  %span.counter 75
+              .progress_br
+                .progress
+                  .progress-bar{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "75", :role => "progressbar"}
+/ ================End Welcome Area =================
+/ ================My Tabs Area =================
+%section#experiences.mytabs_area.p_120.section-gap
+  .container
+    .tabs_inner
+      %ul#myTab.nav.nav-tabs{:role => "tablist"}
+        %li.nav-item
+          %a#experience-tab.nav-link.active{"aria-controls" => "experience", "aria-selected" => "true", "data-toggle" => "tab", :href => "#experience", :role => "tab"} My Experiences
+        %li.nav-item
+          %a#education-tab.nav-link{"aria-controls" => "education", "aria-selected" => "false", "data-toggle" => "tab", :href => "#education", :role => "tab"} My Education
+      #myTabContent.tab-content
+        #experience.tab-pane.fade.show.active{"aria-labelledby" => "experience-tab", :role => "tabpanel"}
+          %ul.list
+            %li
+              %span
+              .media
+                .d-flex
+                  %p March 2017 to present
+                .media-body
+                  %h4 Colorlib
+                  %p
+                    Senior Web Developer
+                    = succeed "Santa" do
+                      %br/
+            %li
+              %span
+              .media
+                .d-flex
+                  %p March 2017 to present
+                .media-body
+                  %h4 Colorlib
+                  %p
+                    Senior Web Developer
+                    = succeed "Santa" do
+                      %br/
+            %li
+              %span
+              .media
+                .d-flex
+                  %p March 2017 to present
+                .media-body
+                  %h4 Colorlib
+                  %p
+                    Senior Web Developer
+                    = succeed "Santa" do
+                      %br/
+        #education.tab-pane.fade{"aria-labelledby" => "education-tab", :role => "tabpanel"}
+          %ul.list
+            %li
+              %span
+              .media
+                .d-flex
+                  %p 2009-2010
+                .media-body
+                  %h4 Carnegie Mellon University
+                  %p
+                    MS Software Engineering with  specialization in Development Management & Entrepreneurship
+                    = succeed "CA," do
+                      %br/
+            %li
+              %span
+              .media
+                .d-flex
+                  %p March 2017 to present
+                .media-body
+                  %h4 Colorlib
+                  %p
+                    Senior Web Developer
+                    = succeed "Santa" do
+                      %br/
+            %li
+              %span
+              .media
+                .d-flex
+                  %p March 2017 to present
+                .media-body
+                  %h4 Colorlib
+                  %p
+                    Senior Web Developer
+                    = succeed "Santa" do
+                      %br/
+/ ================End My Tabs Area =================
+/ ================Feature Area =================
+%section#offerings.feature_area.p_120.section-gap
+  .container
+    .main_title
+      %h2 offerings to my clients
+      %p If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $.17 each.
+    .feature_inner.row
+      .col-lg-4.col-md-6
+        .feature_item
+          %i.flaticon-city
+          %h4 Architecture
+          %p If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.
+      .col-lg-4.col-md-6
+        .feature_item
+          %i.flaticon-skyline
+          %h4 Interior Design
+          %p If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.
+      .col-lg-4.col-md-6
+        .feature_item
+          %i.flaticon-sketch
+          %h4 Concept Design
+          %p If you are looking at blank cassettes on the web, you may be very confused at the difference in price. You may see some for as low as $17 each.
+/ ================End Feature Area =================
+/ start contact Area
+%section#contact.contact-area.section-gap
+  .container
+    .row.d-flex.justify-content-center
+      .menu-content.pb-20.col-lg-8
+        .title.text-center
+          %h1.mb-10 Need more info? Just drop me a line.
+    %form#myForm.form-area.mt-60{:action => "mail.php", :method => "post"}
+      .row
+        .col-lg-6.form-group
+          %input.common-input.mb-20.form-control{:name => "name", :onblur => "this.placeholder = 'Enter your name'", :onfocus => "this.placeholder = ''", :placeholder => "Enter your name", :required => "", :type => "text"}/
+          %input.common-input.mb-20.form-control{:name => "email", :onblur => "this.placeholder = 'Enter email address'", :onfocus => "this.placeholder = ''", :pattern => "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$", :placeholder => "Enter email address", :required => "", :type => "email"}/
+          %input.common-input.mb-20.form-control{:name => "subject", :onblur => "this.placeholder = 'Enter your subject'", :onfocus => "this.placeholder = ''", :placeholder => "Enter your subject", :required => "", :type => "text"}/
+        .col-lg-6.form-group
+          %textarea.common-textarea.mt-10.form-control{:name => "message", :onblur => "this.placeholder = 'Message'", :onfocus => "this.placeholder = ''", :placeholder => "Message", :required => ""}
+          %button.primary-btn.mt-20
+            Send Message
+            %span.lnr.lnr-arrow-right
+          .alert-msg
+/ end contact Area
+/ start footer Area
+%footer.footer-area.section-gap
+  .container
+    .row
+      .col-lg-5.col-md-6.col-sm-6
+        .single-footer-widget
+          %h6 About Me
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
+          / Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+          %p.footer-text
+            Copyright ©
+            :javascript
+              document.write(new Date().getFullYear());
+            2019
+            All rights reserved | This template is made with
+            %i.fa.fa-heart-o{"aria-hidden" => "true"}
+            by
+            %a{:href => "https://colorlib.com", :target => "_blank"} Colorlib
+          / Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+      .col-lg-5.col-md-6.col-sm-6
+      .col-lg-2.col-md-6.col-sm-6.social-widget
+        .single-footer-widget
+          %h6 Follow Me
+          %p Let us be social
+          .footer-social.d-flex.align-items-center
+            %a{:href => "#"}
+              %i.fa.fa-linkedin
+            %a{:href => "#"}
+              %i.fa.fa-github
+            %a{:href => "#"}
+              %i.fa.fa-facebook
+            %a{:href => "#"}
+              %i.fa.fa-twitter
+/ End footer Area
