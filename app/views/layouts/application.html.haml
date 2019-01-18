@@ -1,12 +1,27 @@
 !!!
-%html
+%html{'xmlns' => "#{HOST['protocol'].to_s}://www.w3.org/1999/xhtml",
+       'xmlns:fb' => "#{HOST['protocol'].to_s}://www.facebook.com/2008/fbml",
+       'xmlns:og' => "#{HOST['protocol'].to_s}://opengraphprotocol.org/schema/"}
+
   %head
-    %title Sunil Portfolio
+    %title Sunil kumar Pissaye - Personal Website
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    %meta{content: "#{HOST['protocol']}://#{HOST['host']}", property: "og:url"}
+    %meta{content: "#{META['title']}", property: "title"}
+    %meta{content: "#{META['description']}", property: "description"}
+    %meta{content: "#{META['keywords']}", property: "keywords"}
+    %meta{content: "#{META['title']}", property: "og:title"}
+    %meta{content: "#{META['image']}", property: "og:image"}
+    %meta{content: "#{META['description']}", property: "og:description"}
+    %meta{content: "#{META['title']}", itemprop: "name"}
+    %meta{content: "#{META['image']}", itemprop: "image"}
+    %meta{content: "#{META['description']}", itemprop: "description"}
+
 
   %body
     = yield

@@ -1,0 +1,19 @@
+defaults: &defaults
+  logo: ""
+  image: ""
+  title: Sunil's Personal Website
+  description: Sunil is a full stack developer and an entrepreneur.
+  keywords: sunil, full stack developer, entrepreneur, simply farm, story31, press31, rails, reactjs, nodejs, backbonejs, marionettejs, postgresql, mysql
+
+development:
+  <<: *defaults
+  logo: ""
+
+test:
+  <<: *defaults
+
+staging:
+  <<: *defaults
+
+production:
+  <<: *defaults
