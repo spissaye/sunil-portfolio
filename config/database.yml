@@ -82,6 +82,8 @@ test:
 #
 production:
   <<: *default
-  database: sunil-portfolio_production
-  username: sunil-portfolio
-  password: <%= ENV['SUNIL-PORTFOLIO_DATABASE_PASSWORD'] %>
+  database: sunilportfolio
+  username: sunilportfolio
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOST'] %>
+  port: <%= ENV['RDS_PORT'] %>
