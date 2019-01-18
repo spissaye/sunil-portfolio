@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post 'contact', to: 'home#contact', as: 'contact'
 end
 
-Rails.application.routes.draw do
-  mount ResqueWeb::Engine => "/resque_web"
+if Rails.env.development?
+  Rails.application.routes.draw do
+    mount ResqueWeb::Engine => "/resque_web"
+  end
 end
