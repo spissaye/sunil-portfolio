@@ -32,5 +32,17 @@ module SunilPortfolio
 
     config.sass.preferred_syntax = :sass
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    #loads /config/*.const.yml and assigns ENV-specific data into a constant based on file name
+    def self.load_configs
+      paths = Dir.glob(File.join(Rails.root, "config", "*.const.yml"))
+      paths.each do |path|
+        module_eval <<-code
+          ::#{ path.split("/").last.split(".").first.upcase } = YAML::load_file(path)[Rails.env]
+        code
+      end
+    end
+
+    self.load_configs
   end
 end

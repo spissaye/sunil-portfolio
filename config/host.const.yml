@@ -1,0 +1,22 @@
+defaults: &defaults
+  cdn: "http://cdn%d.meetsunil.com"
+
+development:
+  <<: *defaults
+  protocol: http
+  host: localhost:3000
+
+test:
+  <<: *defaults
+  protocol: https
+  host: qa.meetsunil.com
+
+staging:
+  <<: *defaults
+  protocol: https
+  host: staging.meetsunil.com
+
+production:
+  <<: *defaults
+  protocol: https
+  host: meetsunil.com
