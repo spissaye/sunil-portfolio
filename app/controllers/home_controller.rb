@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 	def contact
 		@contact = Contact.new(contact_params)
 		@contact.save
+    Resque.enqueue(ContactMailerJob, @contact.id.to_s)
 		render json: @contact
 	end
 

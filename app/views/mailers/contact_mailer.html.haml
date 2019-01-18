@@ -1,0 +1,27 @@
+!!! 5
+%html{'xmlns' => "#{HOST['protocol'].to_s}://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+  %body
+    %p
+      Hi,
+    %p
+      Aa email enquiry has been received.
+    %p
+      Email:
+      = @contact.email
+    %p
+      Name:
+      = @contact.name
+    %p
+      Subject:
+      = @contact.subject
+    %p
+      Message:
+      = @contact.message
+    %p
+      Best Regards,
+      %br
+      \- SP Website
+      %br
+      = link_to "www.meetsunil.com", "https://meetsunil.com"
