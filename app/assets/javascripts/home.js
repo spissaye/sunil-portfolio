@@ -53,4 +53,14 @@ $(document).ready(function(){
       }
     }
   });
+
+  $(document).on("ajax:success", "#contact_form", function(event, data, status, xhr) {
+    $("#contact_form").slideUp(function(){
+      $(".contact-thank-you").fadeIn();
+    });
+  });
+
+  $(document).on("ajax:error", "#contact_enquiry", function(event, xhr, status, error) {
+    $(".contact-error").fadeIn();
+  });
 });

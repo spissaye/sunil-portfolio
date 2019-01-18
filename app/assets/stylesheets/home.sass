@@ -749,7 +749,7 @@ h1, h2, h3, h4, h5, h6
   .section-title p br
     display: none
 
-.default-header, .primary-btn
+.default-header, .primary-btn, .dropdown-menu
   background-image: -webkit-linear-gradient(0deg, #62bdfc 0%, #8490ff 100%)
 // .p1-gradient-bg, .primary-btn, .primary-btn2:hover, .dropdown-menu, .myself-wrap .desc .talk-btn, .skillbar-bar, .single-feature:hover, .single-footer-widget .click-btn, .generic-banner
 //   background-image: -webkit-linear-gradient(0deg, #62bdfc 0%, #8490ff 100%)
@@ -943,12 +943,13 @@ h1, h2, h3, h4, h5, h6
   font-weight: 600
   color: #000
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1)
-  border: 1px solid transparent
+  border: 1px solid whitesmoke
   border-radius: 20px
   &:hover
-    border: 1px solid #fff
-    background: transparent
-    color: #fff
+    cursor: pointer
+    border: 1px solid $primary-color
+    background: white
+    color: $primary-color
 
 .about-area
   background-color: #f9f9ff
@@ -993,7 +994,6 @@ h1, h2, h3, h4, h5, h6
 .form-area
   input
     padding: 15px
-    border-radius: 0
     font-size: 12px
   textarea
     border-radius: 0
@@ -1231,3 +1231,26 @@ h6
     color: $pfont
     line-height: 26px
     margin-bottom: 0px
+
+.contact-thank-you, .contact-error
+  display: none
+  font-size: 32px
+  line-height: 40px
+  text-align: center
+  color: darkred
+  margin-top: 15px
+  margin-bottom: 15px
+
+.send-message-btn
+  background-color: #fff
+  padding: 8px 40px
+  font-weight: 600
+  color: #000
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1)
+  border: 1px solid whitesmoke
+  border-radius: 20px
+  &:hover
+    cursor: pointer
+    border: 1px solid $primary-color
+    background: white
+    color: $primary-color

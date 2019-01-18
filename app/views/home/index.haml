@@ -31,18 +31,18 @@
   .container
     .row.justify-content-start.align-items-center
       .col-lg-6.col-md-12.no-padding.banner-right.text-center
-        %img.img-fluid{:alt => "", :src => "/assets/sunil_kumar_pissaye-9a59a056f64556f607c4c654051b4ca11a6ea51b12b79aae4abbda092e943df2.png"}/
+        %img.img-fluid{:alt => "", :src => asset_path('/assets/sunil_kumar_pissaye.png') }
       .col-lg-6.col-md-12.banner-left
         %h1
           Hi, I am
-          %br/
+          %br
           %span Sunil kumar Pissaye
-          %br/
+          %br
         %span.iam
           Carnegie Mellon Grad | Full Stack Engineer | Entrepreneur
         %p.mx-auto.mt-20.mb-40
           Excited by new ideas and cool technologies. Entrepreneurial mindset.
-          %br/
+          %br
           Enjoy working in different roles & responsibilities.
         %a.text-uppercase.header-btn.scroll-nav{:href => "#contact"} Let Us Talk
 / / End banner Area
@@ -225,18 +225,21 @@
       .menu-content.pb-20.col-lg-8
         .title.text-center
           %h1.mb-10 Need more info? Just drop me a line.
-    %form#myForm.form-area.mt-60{:action => "mail.php", :method => "post"}
+    = form_for @contact, url: contact_path(format: :json), method: :post, remote: true, authenticity_token: form_authenticity_token, name: "contact", html: {class: "contact-form form-area mt-60", id: "contact_form"} do |f|
       .row
         .col-lg-6.form-group
-          %input.common-input.mb-20.form-control{:name => "name", :onblur => "this.placeholder = 'Enter your name'", :onfocus => "this.placeholder = ''", :placeholder => "Enter your name", :required => "", :type => "text"}/
-          %input.common-input.mb-20.form-control{:name => "email", :onblur => "this.placeholder = 'Enter email address'", :onfocus => "this.placeholder = ''", :pattern => "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{1,63}$", :placeholder => "Enter email address", :required => "", :type => "email"}/
-          %input.common-input.mb-20.form-control{:name => "subject", :onblur => "this.placeholder = 'Enter your subject'", :onfocus => "this.placeholder = ''", :placeholder => "Enter your subject", :required => "", :type => "text"}/
+          = f.text_field :name, required: true, placeholder: "Enter Your Name", onfocus: "Enter Your Name", maxlength: "255", class: "common-input mb-20 form-control"
+          = f.email_field :email, required: true, placeholder: "Enter Your Email", onfocus: "Enter Your Email Address", class: "common-input mb-20 form-control"
+          = f.text_field :subject, required: true, placeholder: "Enter Your Subject", onfocus: "Enter Your Subject", class: "common-input mb-20 form-control"
         .col-lg-6.form-group
-          %textarea.common-textarea.mt-10.form-control{:name => "message", :onblur => "this.placeholder = 'Message'", :onfocus => "this.placeholder = ''", :placeholder => "Message", :required => ""}
-          %button.primary-btn.mt-20
-            Send Message
-            %span.lnr.lnr-arrow-right
+          = f.text_area :message, required: true, placeholder: "Enter Your Message", onfocus: "Enter Your Message", maxlength: "500", class: "common-input mb-20 form-control"  
+          = f.submit "Send Message", class: "send-message-btn"
           .alert-msg
+    .row
+      .col-lg-12.form-group.contact-thank-you
+        Thank you for reaching out. I will get in touch with you right away.
+      .col-lg-12.form-group.contact-error
+        Seems like something went wrong. Please refresh the page or try again later.
 / end contact Area
 / start footer Area
 %footer.footer-area.section-gap
