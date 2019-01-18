@@ -35,6 +35,10 @@ module SunilPortfolio
 
     #loads /config/*.const.yml and assigns ENV-specific data into a constant based on file name
     def self.load_configs
+      puts "*"*30
+      puts ENV.inspect
+      puts "*"*30
+
       paths = Dir.glob(File.join(Rails.root, "config", "*.const.yml"))
       paths.each do |path|
         module_eval <<-code
