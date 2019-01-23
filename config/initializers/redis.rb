@@ -8,8 +8,6 @@ $redis_url ||=
     elsif Rails.env.test?
       db = ENV.fetch('TEST_ENV_NUMBER', 0).to_i + 1
       "redis://localhost:6379/#{db}"
-    elsif File.exist?(Rails.root + "config/resque.txt")
-      "redis://#{File.read(Rails.root + "config/resque.txt")}"
     else
       ENV["REDISTOGO_URL"]
     end
