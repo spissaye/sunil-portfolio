@@ -71,11 +71,11 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'meetsunil.com' }
   config.action_mailer.smtp_settings = {
       address: "email-smtp.eu-west-1.amazonaws.com",
-      port: 587,
+      port: 25,
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: "AKIAIFQZLZ2ALQ5RBYPQ",
-      password: "BLm4UrzMIrRpNNGlbmqT6/hTnUFEh9xUO/zKghU5jR7Z"
+      user_name: "AKIAJ4KRHKWRECCDR6WA",
+      password: "BNBV5tcT8qc+LI6/9rHoqlQd7oZr1yyNGzlPNyrkB+r0"
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
