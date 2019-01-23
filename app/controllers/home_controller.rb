@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 	def contact
 		@contact = Contact.new(contact_params)
 		@contact.save
+    EmailWorker.perform_async(@contact)
 		render json: @contact
 	end
 

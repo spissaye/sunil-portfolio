@@ -5,3 +5,10 @@ Rails.application.routes.draw do
 
   post 'contact', to: 'home#contact', as: 'contact'
 end
+
+if Rails.env.development?
+  require 'sidekiq/web'
+  Rails.application.routes.draw do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+end

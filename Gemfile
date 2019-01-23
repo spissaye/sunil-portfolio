@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.0'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'haml-rails', '~> 1.0'
 gem 'bootstrap', '~> 4.2.1'
 gem 'jquery-rails'
+gem 'sidekiq'
 gem 'mini_racer'
 
 group :development, :test do
