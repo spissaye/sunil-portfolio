@@ -4,6 +4,11 @@
 $(document).ready(function(){
   "use strict";
 
+  $(".exp-title").on("click", function () {
+    let target_ele = $($(this).data("target"));
+    target_ele.modal();
+  });
+
   var window_width   = $(window).width(),
   window_height      = window.innerHeight,
   header_height      = $(".default-header").height(),
@@ -56,11 +61,16 @@ $(document).ready(function(){
 
   $(document).on("ajax:success", "#contact_form", function(event, data, status, xhr) {
     $("#contact_form").slideUp(function(){
+      $(".contact-error").fadeOut();
       $(".contact-thank-you").fadeIn();
     });
   });
 
-  $(document).on("ajax:error", "#contact_enquiry", function(event, xhr, status, error) {
-    $(".contact-error").fadeIn();
+  $(document).on("ajax:error", "#contact_form", function(event) {
+    if (event.detail[0]["base"] != null) {
+      $(".contact-captcha-error").text(event.detail[0]["base"]).fadeIn();
+    } else {
+      $(".contact-error").fadeIn();
+    }
   });
 });

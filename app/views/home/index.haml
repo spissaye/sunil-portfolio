@@ -17,8 +17,6 @@
               %li
                 %a.scroll-nav{:href => "#experiences"} Experience
               %li
-                %a.scroll-nav{:href => "#offerings"} Offerings
-              %li
                 %a.scroll-nav{:href => "#contact"} Contact
               / / Dropdown
               -#%li.dropdown
@@ -41,7 +39,8 @@
         %span.iam
           Carnegie Mellon Grad | Full Stack Engineer | Entrepreneur
         %p.mx-auto.mt-20.mb-40
-          Currently looking to join a team creating a positive impact in the world through technology.
+          A full stack engineer that takes an entrepreneurial approach to solving problems.
+          -#Currently looking to join a team creating a positive impact in the world through technology.
           -#I am at my best when I am vigorously iterating in high performing teams on ideas that will have a positive impact on the world.
           -#%br
           -#I am currently looking to join such a team as a Full Stack Engineer.
@@ -59,7 +58,6 @@
                 Full stack engineer with 11+ years of experience; seen 5+ products through from inception to production and scaling one of the products to 300 million users.
               %li
                 I am humbled by learning on the cutting edge - having spent most of my career in start-ups either as an early team member or a co-founder. I have been through all phases of a start-up including acquisitions.
-                I can add tremendous value to any team with my entrepreneurial approach to solving problems and building high performing teams.
               %li
                 I have a Master’s degree in Software Engineering + Development Management from Carnegie Mellon University.
       .col-lg-6.welcome_text.skills_wrap
@@ -74,7 +72,7 @@
             %li
               Agile web development
             %li
-              REST based API development creating micro-services
+              REST based API development
             %li
               Ruby on Rails, Sinatra, Redis, Resque, Sidekiq
             %li
@@ -124,22 +122,22 @@
                 .d-flex
                   %p Aug 2016 to Jan 2019
                 .media-body
-                  %h4 Simply Farm
+                  %h4.exp-title#sf{"data-target" => "#SFModal"} Simply Farm
                   %p
                     Co-Founder / Technology Head
                     = succeed "Bangalore, India" do
-                      %br/
+                      %br
             %li
               %span
               .media
                 .d-flex
                   %p Oct 2015 to Aug 2016
                 .media-body
-                  %h4 Story31
+                  %h4.exp-title#s31{"data-target" => "#S31Modal"} Story31
                   %p
                     Co-Founder / Technology Head
                     = succeed "Bangalore, India" do
-                      %br/
+                      %br
             %li
               %span
               .media
@@ -150,7 +148,7 @@
                   %p
                     Co-Founder / Technology Head
                     = succeed "Bangalore, India" do
-                      %br/
+                      %br
             %li
               %span
               .media
@@ -161,29 +159,20 @@
                   %p
                     Developer
                     = succeed "San Francisco, USA" do
-                      %br/
+                      %br
             %li
               %span
               .media
                 .d-flex
-                  %p Sep 2012 - May 2013
+                  %p Feb 2011 - May 2013
                 .media-body
                   %h4 The Walt Disney Company
                   %p
-                    Integration Lead Engineer
-                    = succeed "Palo Alto, USA" do
-                      %br/
-            %li
-              %span
-              .media
-                .d-flex
-                  %p Feb 2011 - Sep 2012
-                .media-body
-                  %h4 The Walt Disney Company
-                  %p
+                    Integration Lead / 
+                    %br
                     Senior Software Engineer
                     = succeed "Palo Alto, USA" do
-                      %br/
+                      %br
             %li
               %span
               .media
@@ -194,18 +183,7 @@
                   %p
                     Software Engineer
                     = succeed "Palo Alto, USA" do
-                      %br/
-            %li
-              %span
-              .media
-                .d-flex
-                  %p Sep 2010 - Feb 2011
-                .media-body
-                  %h4 Togetherville Inc
-                  %p
-                    Software Engineer
-                    = succeed "Palo Alto, USA" do
-                      %br/
+                      %br
             %li
               %span
               .media
@@ -216,7 +194,7 @@
                   %p
                     Research Assistant
                     = succeed "Mountain View, USA" do
-                      %br/
+                      %br
             %li
               %span
               .media
@@ -227,7 +205,7 @@
                   %p
                     Software Engineer
                     = succeed "Bangalore, India" do
-                      %br/
+                      %br
         #education.tab-pane.fade{"aria-labelledby" => "education-tab", :role => "tabpanel"}
           %ul.list
             %li
@@ -239,8 +217,8 @@
                   %h4 Carnegie Mellon University
                   %p
                     MS Software Engineering + Development Management
-                    = succeed "Moutain View, USA" do
-                      %br/
+                    = succeed "Mountain View, USA" do
+                      %br
             %li
               %span
               .media
@@ -251,18 +229,7 @@
                   %p
                     Bachelor's in Computer Science
                     = succeed "Bangalore, India" do
-                      %br/
-            %li
-              %span
-              .media
-                .d-flex
-                  %p Jun 2000 - May 2002
-                .media-body
-                  %h4 Vijaya Pre-university College
-                  %p
-                    Physics, Chemistry, Mathematics, Computer Science
-                    = succeed "Bangalore, India" do
-                      %br/
+                      %br
 / ================End My Tabs Area =================
 / ================Feature Area =================
 -#%section#offerings.feature_area.p_120.section-gap
@@ -302,13 +269,16 @@
           = f.text_field :subject, required: true, placeholder: "Enter Your Subject", onfocus: "Enter Your Subject", class: "common-input mb-20 form-control"
         .col-lg-6.form-group
           = f.text_area :message, required: true, placeholder: "Enter Your Message", onfocus: "Enter Your Message", maxlength: "500", class: "common-input mb-20 form-control"  
-          = f.submit "Send Message", class: "send-message-btn"
+          = recaptcha_tags
+          = f.submit "Send Message", class: "send-message-btn mt-3"
           .alert-msg
     .row
       .col-lg-12.form-group.contact-thank-you
         Thank you for reaching out. I will get in touch with you right away.
-      .col-lg-12.form-group.contact-error
-        Seems like something went wrong. Please refresh the page or try again later.
+      .col-lg-12.form-group
+        .contact-captcha-error.d-none
+        .contact-error.d-none
+          Seems like something went wrong. Please refresh the page or try again later.
 / end contact Area
 / start footer Area
 %footer.footer-area.section-gap
@@ -340,8 +310,82 @@
               %i.fa.fa-linkedin
             %a{:href => "https://github.com/spissaye"}
               %i.fa.fa-github
-            %a{:href => "https://www.facebook.com/sunievl"}
-              %i.fa.fa-facebook
-            %a{:href => "https://twitter.com/sunievl"}
-              %i.fa.fa-twitter
 / End footer Area
+
+#SFModal.modal
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h5.modal-title
+          @ Simply Farm
+        = button_tag "X", {"data-dismiss" => "modal", class: "modal-close-btn"}
+      .modal-body
+        .container-fluid
+          .row
+            .col-12
+              #sf_carousel_ind.carousel.slide{"data-ride" => "carousel"}
+                .carousel-inner
+                  .carousel-item.active
+                    = image_tag asset_path("simply_farm_new_indian_express.jpeg"), class: "img-fluid .d-block.w-100"
+                    .carousel-caption
+                      Article in New Indian Express.
+                  .carousel-item
+                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/dYcD0tUjMTs", :width => "560"}
+              %a.carousel-control-prev{"data-slide" => "prev", :href => "#sf_carousel_ind", :role => "button"}
+                %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+                %span.sr-only Previous
+              %a.carousel-control-next{"data-slide" => "next", :href => "#sf_carousel_ind", :role => "button"}
+                %span.carousel-control-next-icon{"aria-hidden" => "true"}
+                %span.sr-only Next
+
+#S31Modal.modal
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h5.modal-title
+          @ Story31
+        = button_tag "X", {"data-dismiss" => "modal", class: "modal-close-btn"}
+      .modal-body
+        .container-fluid
+          .row
+            .col-12
+              #s31_carousel_ind.carousel.slide{"data-ride" => "carousel"}
+                .carousel-inner
+                  .carousel-item.active
+                    = image_tag asset_path("Deccan-Chronicle-feb-2016.jpg"), class: "img-fluid .d-block.w-100"
+                    .carousel-caption
+                      Article in Deccan Chronicle.
+                  .carousel-item
+                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/qb_V2FK2bL8", :width => "560"}
+              %a.carousel-control-prev{"data-slide" => "prev", :href => "#s31_carousel_ind", :role => "button"}
+                %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+                %span.sr-only Previous
+              %a.carousel-control-next{"data-slide" => "next", :href => "#s31_carousel_ind", :role => "button"}
+                %span.carousel-control-next-icon{"aria-hidden" => "true"}
+                %span.sr-only Next
+
+#P31Modal.modal
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        %h5.modal-title
+          @ Press31
+        = button_tag "X", {"data-dismiss" => "modal", class: "modal-close-btn"}
+      .modal-body
+        .container-fluid
+          .row
+            .col-12
+              #p31_carousel_ind.carousel.slide{"data-ride" => "carousel"}
+                .carousel-inner
+                  .carousel-item.active
+                    = image_tag asset_path("Deccan-Chronicle-feb-2016.jpg"), class: "img-fluid .d-block.w-100"
+                    .carousel-caption
+                      Article in Deccan Chronicle.
+                  .carousel-item
+                    %iframe{:allow => "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture", :allowfullscreen => "", :frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/qb_V2FK2bL8", :width => "560"}
+              %a.carousel-control-prev{"data-slide" => "prev", :href => "#p31_carousel_ind", :role => "button"}
+                %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+                %span.sr-only Previous
+              %a.carousel-control-next{"data-slide" => "next", :href => "#p31_carousel_ind", :role => "button"}
+                %span.carousel-control-next-icon{"aria-hidden" => "true"}
+                %span.sr-only Next
