@@ -4,7 +4,7 @@ lock "~> 3.11.0"
 set :application, "sunil-portfolio"
 set :repo_url, "git@github.com:spissaye/sunil-portfolio.git"
 set :stages, %w(staging production)
-set :default_stage, "local"
+set :default_stage, "staging"
 set :deploy_to, "/home/deployer/apps/sunil-portfolio"
 set :deploy_via, :remote_cache
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
