@@ -4,8 +4,8 @@ WORKER01 = "meetsunil.com"
 role :web, WEB01, primary: true
 role :sidekiq_worker, WORKER01
 
-server WEB01, user: "deployer", roles: %w{web}
 set :user, "deployer"
+server WEB01, user: fetch(:user), roles: %w{web app db}
 
 set :ssh_options, {
     forward_agent: true,

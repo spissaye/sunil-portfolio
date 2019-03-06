@@ -82,8 +82,8 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV['DBNAME'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] %>
-  port: <%= ENV['DB_PORT'] %>
+  database: <%= ENV.fetch('DBNAME') %>
+  username: <%= ENV.fetch('DB_USERNAME') %>
+  password: <%= ENV.fetch('DB_PASSWORD') %>
+  host: <%= ENV.fetch('DB_HOST') %>
+  port: <%= ENV.fetch('DB_PORT') %>
