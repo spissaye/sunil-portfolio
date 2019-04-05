@@ -7,7 +7,7 @@ class HomeController < ApplicationController
 	def contact
 		@contact = Contact.new(contact_params)
 		if verify_recaptcha(model: @contact) && @contact.save
-			EmailWorker.perform_async(@contact)
+			EmailWorker.perform_async(@contact.id)
 			render json: @contact, status: :ok
 		else
 			puts @contact.errors.inspect

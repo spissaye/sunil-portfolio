@@ -65,20 +65,19 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "sunil-portfolio_#{Rails.env}"
 
-  config.action_mailer.perform_caching = false
-  config.action_mailer.raise_delivery_errors = false
   # Action mail configuration.
+  config.action_mailer.delivery_method = :smtp
   config.action_mailer.default_url_options = { :host => 'meetsunil.com' }
   config.action_mailer.smtp_settings = {
-      address: "smtp.yandex.ru",
-      port: 465,
+      address: "smtp.sendgrid.net",
+      port: 587,
       domain: "meetsunil.com",
-      authentication: "login",
+      authentication: "plain",
       enable_starttls_auto: true,
-      ssl: true,
-      tls: true,
-      user_name: ENV['YANDEX_MAIL'],
-      password: ENV['YANDEX_PASSWORD']
+      # ssl: true,
+      # tls: true,
+      user_name: ENV['SG_MAIL_USER'],
+      password: ENV['SG_MAIL_PASSWORD']
   }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
