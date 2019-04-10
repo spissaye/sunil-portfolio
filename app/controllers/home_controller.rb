@@ -10,7 +10,6 @@ class HomeController < ApplicationController
 			EmailWorker.perform_async(@contact.id)
 			render json: @contact, status: :ok
 		else
-			puts @contact.errors.inspect
 			render json: @contact.errors, status: :unprocessable_entity
 		end
 	end
